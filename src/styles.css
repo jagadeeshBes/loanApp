@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: rgb(235, 240, 240);
+}
+form{
+    padding: 50px ;
+
+}
+input{
+    border: none;
+    
+}
+
+@media only screen and (min-width: 960px) {
+    form{
+
+        width: 70%;
+    }
+
+    .table{
+        max-width: 65%;
+    }
+    .list-data{
+        width: 70%;
+    }
+    .whole-loan{
+        margin: 50px;
+        position: absolute;
+        top: 70px;
+        right:-250px;
+        padding: 50px;
+    }
+}
+@media only screen and (device-width: 768px) {
+    form{
+
+        width: 70%;
+    }
+    .table{
+        width: 65%;
+        
+        
+    }
+    .list-data{
+        width: 70%;
+    }
+    .whole-loan{
+        position:absolute;
+        top: 167px;
+        right: -800px;
+    }
+   
+ }

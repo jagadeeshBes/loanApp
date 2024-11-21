@@ -1,0 +1,122 @@
+<div class="row date">
+<form class="row g-3">
+    <div class="col-lg-12">
+        <label for="inputEmail4" class="form-label">Name</label>
+        <input type="text"class="form-control" [(ngModel)]="application.fullName" name="fullName" id="inputEmail4">
+      </div>
+    <div class="col-md-4">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email"class="form-control" [(ngModel)]="application.email"name="email" id="inputEmail4">
+    </div>
+    <div class="col-md-4">
+      <label for="birth" class="form-label">Data Of Birth</label>
+      <input type="date"class="form-control"[(ngModel)]="application.dateOfBirth"name="dateOfBirth" id="birth">
+    </div>
+    <div class="col-md-4">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text"class="form-control"[(ngModel)]="application.phone"name="phone" id="phone">
+      </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input type="text"class="form-control"[(ngModel)]="application.address"name="address" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text"class="form-control"[(ngModel)]="application.city"name="city" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState"class="form-control"[(ngModel)]="application.state"name="state" class="form-select">
+        <option selected>Choose...</option>
+        <option>tamilnadu</option>
+        <option>newYork</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text"class="form-control"[(ngModel)]="application.zipCode"name="zipCode" id="inputZip">
+    </div>
+    <div class="col-md-4">
+        <label for="inputCity" class="form-label">Annual Income</label>
+        <input type="text"class="form-control"[(ngModel)]="application.annualIncome"name="annualIncome" id="inputCity">
+      </div>
+       
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">Employment Status</label>
+        <select id="inputState"class="form-control"[(ngModel)]="application.employmentStatus"name="employmentStatus" class="form-select">
+          <option selected>Choose...</option>
+          <option>Employee</option>
+          <option >Unemployee</option>
+        </select>
+      </div>
+
+      <div class="col-md-4">
+        <label for="inputCity" class="form-label">Ciredt Score</label>
+        <input type="text"[(ngModel)]="application.creditScore"class="form-control" name="creditScore" id="inputCity">
+      </div>
+
+      <div class="col-12">
+        <label for="assets" class="form-label">Assets</label>
+        <input type="text"class="form-control" [(ngModel)]="application.assets"name="assets" id="assets" >
+      </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-dark"(click)="onsubmit()">Submit Application</button>
+    </div>
+  </form>
+
+
+
+  <div class="whole-loan col-lg-6">
+  <div class="container loan">
+    <div class="row list-data">
+        <div class="col-lg-4">
+            <label for="Bankname" class="form-label">Bank Name</label>
+            <input type="text" class="form-control" [(ngModel)]="loan.bankName"name="bankName" id="Bankname">
+          </div>
+          <div class="col-lg-4">
+            <label for="amount" class="form-label">Loan Amount</label>
+            <input type="text"[(ngModel)]="loan.loanAmount" class="form-control"name="loanAmount" id="amount">
+          </div>
+          <div class="col-lg-4">
+            <label for="emi" class="form-label">EMI</label>
+            <input type="text"[(ngModel)]="loan.emi" name="emi" class="form-control" id="emi">
+          </div>
+          
+    </div><br>
+    <button class="btn btn-dark" (click)="addLoan()">Add Another Loan</button>
+</div><br>
+    <div class="row tablerow">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sr No</th>
+            <th scope="col">Bank</th>
+            <th scope="col">Loan Amount</th>
+            <th scope="col">EMI</th>
+          </tr>
+        </thead>
+        <tbody>
+            @if (application.loans.length==0) {
+            
+                <tr>
+                    
+                </tr>
+
+            }
+            @else{
+                @for (item of application.loans; track $index) {
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.bankName}}</td>
+                <td>{{item.loanAmount}}</td>
+                <td>{{item.emi}}</td>
+         </tr>
+        }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
